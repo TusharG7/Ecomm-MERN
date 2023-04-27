@@ -5,7 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserDetails, updateUserProfile } from "../actions/userActions";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
-import { ListMyOrders, listMyOrders } from "../actions/orderActions";
+import {
+  ListMyOrders,
+  getOrderDetails,
+  listMyOrders,
+} from "../actions/orderActions";
 import { LinkContainer } from "react-router-bootstrap";
 
 const ProfileScreen = () => {
@@ -146,8 +150,12 @@ const ProfileScreen = () => {
                     )}
                   </td>
                   <td>
-                    <LinkContainer to={`order/${order._id}`}>
-                      <Button variant="light" className="btn-sm">
+                    <LinkContainer to={`orders/${order._id}`}>
+                      <Button
+                        variant="light"
+                        className="btn-sm"
+                        onClick={() => dispatch(getOrderDetails(order._id))}
+                      >
                         Details
                       </Button>
                     </LinkContainer>
