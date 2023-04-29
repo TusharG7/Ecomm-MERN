@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteUser, listUsers, userDelete } from "../actions/userActions";
+import { deleteUser, listUsers } from "../actions/userActions";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 import { Button, Table } from "react-bootstrap";
@@ -24,7 +24,7 @@ const UserListScreen = () => {
     } else {
       history("/login");
     }
-  }, [dispatch, history, success]);
+  }, [dispatch, history, success, userInfo]);
 
   const deleteHandler = (id) => {
     if (window.confirm("Are you sure ?")) {
@@ -60,7 +60,7 @@ const UserListScreen = () => {
                 </td>
                 <td>
                   {user.isAdmin ? (
-                    <i className="fas fa-check" style={{ color: "red" }}></i>
+                    <i className="fas fa-check" style={{ color: "green" }}></i>
                   ) : (
                     <i className="fas fa-times" style={{ color: "red" }}></i>
                   )}

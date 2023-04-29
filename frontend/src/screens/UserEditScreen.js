@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Link,
-  redirect,
-  useLocation,
-  useNavigate,
-  useParams,
-} from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserDetails, updateUser } from "../actions/userActions";
@@ -19,7 +13,6 @@ const UserEditScreen = () => {
   const [email, setEmail] = useState("");
   const [isAdmin, setIsAdmin] = useState(false);
 
-  const location = useLocation();
   const params = useParams();
   const history = useNavigate();
   const dispatch = useDispatch();
