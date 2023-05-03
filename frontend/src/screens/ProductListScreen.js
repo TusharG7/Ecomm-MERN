@@ -58,6 +58,10 @@ const ProductListScreen = () => {
     pageNumber,
   ]);
 
+  let adminProducts = products.filter(
+    (product) => product.user === userInfo._id
+  );
+
   const deleteHandler = (id) => {
     if (window.confirm("Are you sure ?")) {
       //DELETE PRODUCT
@@ -103,7 +107,7 @@ const ProductListScreen = () => {
               </tr>
             </thead>
             <tbody>
-              {products.map((product) => (
+              {adminProducts.map((product) => (
                 <tr key={product._id}>
                   <td>{product._id}</td>
                   <td>{product.name}</td>
