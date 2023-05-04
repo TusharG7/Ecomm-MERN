@@ -4,7 +4,6 @@ import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../actions/userActions";
 import SearchBox from "./SearchBox";
-import { Route, Routes } from "react-router-dom";
 const Header = () => {
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { listOrders } from "../actions/orderActions";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
-import { Button, Table, Row, Col } from "react-bootstrap";
+import { Button, Table } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 const OrderListScreen = () => {

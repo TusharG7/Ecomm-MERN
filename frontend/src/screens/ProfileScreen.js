@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link, redirect, useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Form, Button, Row, Col, Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserDetails, updateUserProfile } from "../actions/userActions";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
-import {
-  ListMyOrders,
-  getOrderDetails,
-  listMyOrders,
-} from "../actions/orderActions";
+import { getOrderDetails, listMyOrders } from "../actions/orderActions";
 import { LinkContainer } from "react-router-bootstrap";
 
 const ProfileScreen = () => {
@@ -18,7 +14,7 @@ const ProfileScreen = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState(null);
-  const location = useLocation();
+
   const history = useNavigate();
   const dispatch = useDispatch();
 
